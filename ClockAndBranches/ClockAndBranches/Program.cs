@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ClockAndBranches.ConsoleApp;
 
 namespace ClockAndBranches
 {
@@ -6,7 +6,8 @@ namespace ClockAndBranches
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MainMenuForm _mainMenuForm = new MainMenuForm();
+            _mainMenuForm.Run();
         }
     }
 }
