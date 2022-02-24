@@ -5,6 +5,8 @@ namespace ClockAndBranches.ConsoleApp
     public class MainMenuForm
     {
         private ClockApp clockApp = new ClockApp();
+        private BranchesApp branchesApp = new BranchesApp();
+
         public void Run()
         {
             bool run = true;
@@ -15,6 +17,7 @@ namespace ClockAndBranches.ConsoleApp
                 Console.WriteLine("To select program enter program number, type 'exit' to exit application:");
                 Console.WriteLine();
                 Console.WriteLine("1 - Clock arms ange calculator application.");
+                Console.WriteLine("2 - Branch depth level calculator application.");
 
                 string action = Console.ReadLine();
 
@@ -22,6 +25,9 @@ namespace ClockAndBranches.ConsoleApp
                 {
                     case "1":
                         clockApp.Run();
+                        break;
+                    case "2":
+                        branchesApp.Run();
                         break;
                     case "exit":
                         run = false;
