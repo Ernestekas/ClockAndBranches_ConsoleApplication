@@ -38,6 +38,16 @@ namespace ClockAndBranches.Services
             clock.Hours += clock.Minutes / 60;
             clock.Hours = clock.Hours % 12;
             clock.Minutes = clock.Minutes % 60;
+
+            if(clock.Hours < 0)
+            {
+                clock.Hours += 12;
+            }
+            if(clock.Minutes < 0)
+            {
+                clock.Minutes += 60;
+            }
+
             return clock;
         }
     }
