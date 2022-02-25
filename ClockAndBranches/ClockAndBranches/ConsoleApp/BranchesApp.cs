@@ -33,7 +33,7 @@ namespace ClockAndBranches.ConsoleApp
                         int level = 0;
                         Dream m = new Dream();
                         m = _branchService.CreateRandomDream(m);
-                        level = _branchService.GetDeepestDreamLevelNumber(m, level);
+                        level = _branchService.BeginDeepestLevelCalculations(m, level);
                         Console.WriteLine($"Deepest level of a main Dream {level}.");
                         break;
                     default:

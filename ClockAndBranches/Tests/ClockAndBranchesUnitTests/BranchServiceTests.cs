@@ -10,7 +10,7 @@ namespace ClockAndBranchesUnitTests
         private readonly BranchService _branchService = new BranchService();
 
         [Fact]
-        public void GetDeepestDreamLevel_GivenObjectTree_ReturnsLevelOf4()
+        public void BeginDeepestLevelCalculations_GivenObjectTree_ReturnsLevelOf4()
         {
             Dream main = new Dream()
             {
@@ -39,7 +39,7 @@ namespace ClockAndBranchesUnitTests
                 }
             };
 
-            int level = _branchService.GetDeepestDreamLevelNumber(main, 0);
+            int level = _branchService.BeginDeepestLevelCalculations(main, 0);
             Assert.Equal(4, level);
         }
     }

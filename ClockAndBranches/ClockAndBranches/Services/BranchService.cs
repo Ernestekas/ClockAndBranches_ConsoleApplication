@@ -23,7 +23,13 @@ namespace ClockAndBranches.Services
             return dream;
         }
 
-        public int GetDeepestDreamLevelNumber(Dream parent, int deepestFound)
+        public int BeginDeepestLevelCalculations(Dream parent, int deepestFound)
+        {
+            _deepest = 0;
+            return GetDeepestDreamLevelNumber(parent, deepestFound);
+        }
+
+        private int GetDeepestDreamLevelNumber(Dream parent, int deepestFound)
         {
             int currentLevel = deepestFound + 1;
             if(currentLevel > _deepest)
