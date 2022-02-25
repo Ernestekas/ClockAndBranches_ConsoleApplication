@@ -14,10 +14,12 @@ namespace ClockAndBranches.ConsoleApp
             {
                 Console.Clear();
                 Console.WriteLine("Select program you want to run.");
-                Console.WriteLine("To select program enter program number, type 'exit' to exit application:");
+                Console.WriteLine("Select command:");
                 Console.WriteLine();
                 Console.WriteLine("1 - Clock arms ange calculator application.");
                 Console.WriteLine("2 - Branch depth level calculator application.");
+                Console.WriteLine("3 - Exit.");
+                Console.WriteLine();
 
                 string action = Console.ReadLine();
 
@@ -29,7 +31,7 @@ namespace ClockAndBranches.ConsoleApp
                     case "2":
                         branchesApp.Run();
                         break;
-                    case "exit":
+                    case "3":
                         run = false;
                         break;
                     default:

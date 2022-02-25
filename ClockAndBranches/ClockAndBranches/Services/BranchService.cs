@@ -1,40 +1,39 @@
 ﻿using ClockAndBranches.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClockAndBranches.Services
 {
     public class BranchService
     {
-        public Matrioshka CreateRandomMatrioshka(Matrioshka matrioshka)
+        public Dream CreateRandomDream(Dream dream)
         {
-            int branches = new Random().Next(1, 3);
+            int branches = new Random().Next(1, 4);
             for(int i = 0; i < branches; i++)
             {
                 int chance = new Random().Next(0, 100);
-                if(chance < 60)
+                if(chance < 50)
                 {
-                    Matrioshka child = new Matrioshka();
-                    matrioshka.Matrioshkas.Add(CreateRandomMatrioshka(child));
+                    Dream child = new Dream();
+                    dream.Dreams.Add(CreateRandomDream(child));
                 }
             }
 
-            return matrioshka;
+            return dream;
         }
 
-        public int GetDeepestMatrioshkaLevel(Matrioshka mainMatrioshka)
+        public int GetDeepestDreamLevel(Dream mainDream, int currentLevel)
         {
-            int level = 1;
-            for(int i = 0; i < mainMatrioshka.Matrioshkas.Count; i++)
+            for(int i = 0; i < mainDream.Dreams.Count; i++)
             {
-                Matrioshka child = mainMatrioshka.Matrioshkas[i];
-                level += GetDeepestMatrioshkaLevel(child);
+                Dream child = mainDream.Dreams[i];
+                if(i == 0)
+                {
+                    currentLevel++;
+                }
+                currentLevel = GetDeepestDreamLevel(child, currentLevel);
             }
 
-            return level;
+            return currentLevel;
         }
     }
 }

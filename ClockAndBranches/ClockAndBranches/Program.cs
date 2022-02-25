@@ -6,8 +6,7 @@ namespace ClockAndBranches
     {
         static void Main(string[] args)
         {
-            MainMenuForm _mainMenuForm = new MainMenuForm();
-            _mainMenuForm.Run();
+            new MainMenuForm().Run();
         }
     }
 }
