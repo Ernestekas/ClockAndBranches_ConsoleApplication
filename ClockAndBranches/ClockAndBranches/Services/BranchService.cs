@@ -5,7 +5,7 @@ namespace ClockAndBranches.Services
 {
     public class BranchService
     {
-        private int _deepest = 0;
+        private int _deepestLevel = 0;
 
         public Dream CreateRandomDream(Dream dream)
         {
@@ -25,16 +25,16 @@ namespace ClockAndBranches.Services
 
         public int BeginDeepestLevelCalculations(Dream parent, int deepestFound)
         {
-            _deepest = 0;
+            _deepestLevel = 0;
             return GetDeepestDreamLevelNumber(parent, deepestFound);
         }
 
         private int GetDeepestDreamLevelNumber(Dream parent, int deepestFound)
         {
             int currentLevel = deepestFound + 1;
-            if(currentLevel > _deepest)
+            if(currentLevel > _deepestLevel)
             {
-                _deepest = currentLevel;
+                _deepestLevel = currentLevel;
             }
             if(parent.Dreams != null)
             {
@@ -46,7 +46,7 @@ namespace ClockAndBranches.Services
 
             if(currentLevel == 1)
             {
-                return _deepest;
+                return _deepestLevel;
             }
             return 0;
         }
