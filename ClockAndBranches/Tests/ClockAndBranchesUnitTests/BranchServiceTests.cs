@@ -1,6 +1,5 @@
 using ClockAndBranches.Models;
 using ClockAndBranches.Services;
-using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -40,7 +39,7 @@ namespace ClockAndBranchesUnitTests
                 }
             };
 
-            int level = _branchService.GetDeepestDreamLevel(main, 1);
+            int level = _branchService.GetDeepestDreamLevelNumber(main, 0);
             Assert.Equal(4, level);
         }
     }
